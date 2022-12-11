@@ -4,7 +4,10 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
 import { BiSearch, BiCategory, BiCompass } from "react-icons/bi";
 import { AiOutlineFire } from "react-icons/ai";
+
+// Navlinks function for useablity
 const NavLinks = ({ handleClick }) => {
+  // Linkes array to loop through it
   const links = [
     { name: "Discover", to: "/", icon: <BiCompass /> },
     { name: "Search", to: "/search", icon: <BiSearch /> },
@@ -44,11 +47,13 @@ const Sidebar = () => {
           <span className="text-teal-400 font-[Pacifico]">Movie</span>fy
         </h1>
         {mobileMenuOpen ? (
+          // close button
           <RiCloseLine
             onClick={() => setMobileMenuOpen(false)}
             className="w-6 h-6 mr-2 text-white"
           />
         ) : (
+          // burger button
           <HiOutlineMenu
             onClick={() => setMobileMenuOpen(true)}
             className="w-6 h-6 mr-2 text-white"
@@ -56,6 +61,7 @@ const Sidebar = () => {
         )}
       </div>
       <div
+        // toggled nav
         className={`absolute top-0 h-screen w-[calc(30%+28px)] bg-gradient-to-tl from-white/10 to-[#222]  backdrop-blur-lg z-[21]  py-6 px-3 md:hidden transition-all duration-300 ${
           mobileMenuOpen ? "left-0" : "-left-full"
         } `}

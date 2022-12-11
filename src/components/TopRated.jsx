@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetTopRatedMoviesQuery } from "../redux/services/apiEndpoints";
 import { decrement, increment } from "../redux/features/topRatedSlice";

@@ -1,24 +1,14 @@
-import { useEffect, useState } from "react";
-
-import { Route, Routes, NavLink } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import { useGetLatestMoviesQuery } from "./redux/services/apiEndpoints";
-
 import Sidebar from "./components/Sidebar";
-import Searchbar from "./components/Searchbar";
-import Navbar from "./components/Navbar";
 import Content from "./components/Content";
 import Trending from "./components/Trending";
 import Search from "./components/Search";
 import MovieDetails from "./components/MovieDetails";
-import Loader from "./components/Loader";
 import TopRated from "./components/TopRated";
 
 function App() {
-  // const top = data.data.movies.filter((movie) => movie.rating > 8);
-
-  // console.log(top);
   return (
     <div className="relative flex bg-gradient-to-br from-[#222] to-black">
       <Sidebar />

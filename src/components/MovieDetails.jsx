@@ -1,28 +1,16 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { useParams } from "react-router-dom";
 import { useGetMovieDetailsQuery } from "../redux/services/apiEndpoints";
-// import { moviesOption, fetchData } from "../utils/fetchData";
 import Loader from "./Loader";
 import { AiFillStar } from "react-icons/ai";
 import Title from "./Title";
-import MovieCard from "./MovieCard";
-
-{
-  /* <h2
-  className={`absolute text-[45px] text-yellow-500 right-[5px] top-[5px] fflex items-center justify-center `}
->
-  <AiFillStar />
-  <p className=" text-black text-xs font-bold -mt-[30px]">{movie?.rating}</p>
-</h2>; */
-}
 
 const MovieDetails = () => {
+  // fetch movie id
   const { movieId } = useParams();
 
-  // const { data, isFetching, error, isLoading } =
-  //   useGetMovieDetailsQuery(movieId);
-
+  // fetch movie details data
   const {
     data: movie,
     isFetching,
@@ -30,17 +18,14 @@ const MovieDetails = () => {
     isLoading,
   } = useGetMovieDetailsQuery(movieId);
 
-  // const { data: moviesSuggest } = useGetMovieSuggestionQuery(movieId);
-
-  // if (isFetching || isLoading) return <Loader />;
-
   const divRef = useRef(null);
+
+  // scroll up onMount
   useEffect(() => {
     divRef?.current?.scrollIntoView({ behavior: "smooth" });
   });
 
   console.log("movie", movie);
-  // console.log("movies sug", moviesSuggest);
 
   return error ? (
     <>Somthing Went Wrong!!</>
@@ -56,27 +41,39 @@ const MovieDetails = () => {
             <h2 className=" text-2xl  md:text-4xl max-w-[700px] mb-4 text-center md:text-start ">
               {movie.original_title}
             </h2>
-            <div className="flex gap-2 text-gray-300 font-light justify-center md:justify-start">
-              Movies . <p>{movie?.release_date?.slice(0, 4)}</p> .{" "}
-              <p>{movie.original_language}</p>
+
+            {/* getting the release data */}
+            <div className="flex gap-2 text-gray-300 font-light justify-center md:justify-start flex-wrap">
+              Movies .<p>{movie.original_language}</p>.{" "}
+              <p>{movie?.release_date?.slice(0, 4)}</p> .{" "}
+              {movie?.genres.slice(0, 2).map((genre) => (
+                <span key={genre.id}>{genre.name}</span>
+              ))}
+              . {`${Math.floor(movie?.runtime / 60)}h ${movie?.runtime % 60}m`}
             </div>
           </div>
           <div className="flex">
             <p className="text-2xl text-yellow-500">
               <AiFillStar />
             </p>
+            {/* fixing the number */}
             <p>{(movie?.vote_average).toFixed(1)} / 10</p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-14 lg:gap-32 ">
-          <div className=" w-[260px] h-[270px] md:h-[390px]  self-center md:self-start">
+          <div className=" w-[290px] h-[270px] md:h-[390px]  self-center md:self-start">
             <img
               src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
               className="object-fit max-h-full w-full"
             />
           </div>
           <div className="flex-1">
-            <Title name={"Description"} text={movie?.overview} />
+            <div className="mb-4">
+              <i className="text-xl text-white/80 font-mono">
+                {movie?.tagline}
+              </i>
+            </div>
+            <Title name={"Overview"} text={movie?.overview} />
           </div>
         </div>
       </div>
@@ -136,82 +133,3 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
-
-// movie
-
-// {
-//   "adult": false,
-//   "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
-//   "belongs_to_collection": null,
-//   "budget": 200000000,
-//   "genres": [
-//       {
-//           "id": 28,
-//           "name": "Action"
-//       },
-//       {
-//           "id": 14,
-//           "name": "Fantasy"
-//       },
-//       {
-//           "id": 878,
-//           "name": "Science Fiction"
-//       }
-//   ],
-//   "homepage": "https://www.dc.com/BlackAdam",
-//   "id": 436270,
-//   "imdb_id": "tt6443346",
-//   "original_language": "en",
-//   "original_title": "Black Adam",
-//   "overview": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
-//   "popularity": 5999.474,
-//   "poster_path": "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
-//   "production_companies": [
-//       {
-//           "id": 12,
-//           "logo_path": "/iaYpEp3LQmb8AfAtmTvpqd4149c.png",
-//           "name": "New Line Cinema",
-//           "origin_country": "US"
-//       },
-//       {
-//           "id": 34081,
-//           "logo_path": null,
-//           "name": "Flynn Picture Company",
-//           "origin_country": "US"
-//       },
-//       {
-//           "id": 73669,
-//           "logo_path": "/7tmSGstK3KwgcDIuBYLTAayjit9.png",
-//           "name": "Seven Bucks Productions",
-//           "origin_country": "US"
-//       },
-//       {
-//           "id": 128064,
-//           "logo_path": "/13F3Jf7EFAcREU0xzZqJnVnyGXu.png",
-//           "name": "DC Films",
-//           "origin_country": "US"
-//       }
-//   ],
-//   "production_countries": [
-//       {
-//           "iso_3166_1": "US",
-//           "name": "United States of America"
-//       }
-//   ],
-//   "release_date": "2022-10-19",
-//   "revenue": 384571691,
-//   "runtime": 125,
-//   "spoken_languages": [
-//       {
-//           "english_name": "English",
-//           "iso_639_1": "en",
-//           "name": "English"
-//       }
-//   ],
-//   "status": "Released",
-//   "tagline": "The world needed a hero. It got Black Adam.",
-//   "title": "Black Adam",
-//   "video": false,
-//   "vote_average": 7.311,
-//   "vote_count": 2601
-// }

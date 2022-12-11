@@ -26,6 +26,10 @@ a.active {
   animation: d7 1s infinite linear;
 }
 
+.blur-content {
+  background-image: linear-gradient(to right, rgba(31.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 10.5, 0.84) 30%, rgba(31.5, 10.5, 10.5, 0.84) 100%);
+}
+
 @keyframes d7 {
   33% {
     background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
