@@ -1,13 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import MovieCard from "./MovieCard";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
   const dispatch = useDispatch();
-
-  // console.log(count);
 
   return (
     <>
@@ -21,6 +18,7 @@ const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
         ))}
       </div>
       <div className="flex items-center justify-center mt-10  space-x-4">
+        {/* Prev button */}
         <button
           onClick={() => {
             if (pageNumber === 1) {
@@ -38,6 +36,8 @@ const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
           <AiOutlineArrowLeft />
           Prev
         </button>
+
+        {/* Next button */}
         <button
           onClick={() => dispatch(increment())}
           className="flex items-center justify-center gap-[4px] hover:text-teal-400 transition duration-200"

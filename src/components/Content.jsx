@@ -1,33 +1,29 @@
-import { useRef, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { decrement, increment } from "../redux/features/counterSlice";
 import { useGetLatestMoviesQuery } from "../redux/services/apiEndpoints";
-import MovieCard from "./MovieCard";
 import Loader from "./Loader";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
+
 import MoviesGrid from "./MoviesGrid";
 
 const Content = () => {
-  const count = useSelector((state) => state.counter.value);
-  // const {
-  //   data: moviesList,
-  //   error,
-  //   isLoading,
-  //   isFetching,
-  // } = useGetLatestMoviesQuery(count);
-  console.log(count);
+  // set the pageNumber
+  const pageNumber = useSelector((state) => state.counter.value);
 
+  console.log(pageNumber);
+
+  // fetch latest movies data
   const {
     data: moviesList,
     error,
     isLoading,
     isFetching,
-  } = useGetLatestMoviesQuery(count);
+  } = useGetLatestMoviesQuery(pageNumber);
   console.log(moviesList);
 
-  const dispatch = useDispatch();
   const divRef = useRef(null);
+
+  // scroll to top onMount
 
   useEffect(() => {
     divRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -47,7 +43,7 @@ const Content = () => {
     <div ref={divRef}>
       <MoviesGrid
         moviesList={moviesList}
-        pageNumber={count}
+        pageNumber={pageNumber}
         increment={increment}
         decrement={decrement}
       />
