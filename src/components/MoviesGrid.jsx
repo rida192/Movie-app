@@ -17,35 +17,47 @@ const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
           />
         ))}
       </div>
-      <div className="flex items-center justify-center mt-10  space-x-4">
-        {/* Prev button */}
-        <button
-          onClick={() => {
-            if (pageNumber === 1) {
-              return;
-            } else {
-              dispatch(decrement());
-            }
-          }}
-          className={`flex items-center justify-center gap-[4px]  transition duration-200 ${
-            pageNumber === 1
-              ? "opacity-50 hover:text-white"
-              : "hover:text-teal-400"
-          }`}
-        >
-          <AiOutlineArrowLeft />
-          Prev
-        </button>
+      {moviesList?.results?.length !== 0 && (
+        <div className="flex items-center justify-center mt-10  space-x-4">
+          {/* Prev button */}
+          <button
+            onClick={() => {
+              if (pageNumber === 1) {
+                return;
+              } else {
+                dispatch(decrement());
+              }
+            }}
+            className={`flex items-center justify-center gap-[4px]  transition duration-200 ${
+              pageNumber === 1
+                ? "opacity-50 hover:text-white"
+                : "hover:text-teal-400"
+            }`}
+          >
+            <AiOutlineArrowLeft />
+            Prev
+          </button>
 
-        {/* Next button */}
-        <button
-          onClick={() => dispatch(increment())}
-          className="flex items-center justify-center gap-[4px] hover:text-teal-400 transition duration-200"
-        >
-          Next
-          <AiOutlineArrowRight />
-        </button>
-      </div>
+          {/* Next button */}
+          <button
+            onClick={() => {
+              if (pageNumber === moviesList?.total_pages) {
+                return;
+              } else {
+                dispatch(increment());
+              }
+            }}
+            className={`flex items-center justify-center gap-[4px] transition duration-200 ${
+              pageNumber === moviesList?.total_pages
+                ? "opacity-50 hover:text-white"
+                : "hover:text-teal-400"
+            }`}
+          >
+            Next
+            <AiOutlineArrowRight />
+          </button>
+        </div>
+      )}
     </>
   );
 };
