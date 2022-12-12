@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useGetTopRatedMoviesQuery } from "../redux/services/apiEndpoints";
 import { decrement, increment } from "../redux/features/topRatedSlice";
 
@@ -7,17 +7,16 @@ import Loader from "./Loader";
 import MoviesGrid from "./MoviesGrid";
 
 const TopRated = () => {
-  const count = useSelector((state) => state.topRated.value);
-  console.log(count);
+  const pageNumber = useSelector((state) => state.topRated.value);
+  console.log(pageNumber);
   const {
     data: moviesList,
     error,
     isLoading,
     isFetching,
-  } = useGetTopRatedMoviesQuery(count);
+  } = useGetTopRatedMoviesQuery(pageNumber);
   console.log(moviesList);
 
-  const dispatch = useDispatch();
   const divRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const TopRated = () => {
     <div ref={divRef}>
       <MoviesGrid
         moviesList={moviesList}
-        pageNumber={count}
+        pageNumber={pageNumber}
         increment={increment}
         decrement={decrement}
       />

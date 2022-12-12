@@ -26,6 +26,16 @@ export const moviesApi = createApi({
           import.meta.env.VITE_API_KEY
         }&language=en-US&page=${pageNumber}`,
     }),
+    getsearchedMovies: builder.query({
+      query: (args) => {
+        const { search, pageNumber } = args;
+        return {
+          url: `search/movie?api_key=${
+            import.meta.env.VITE_API_KEY
+          }&language=en-US&page=${pageNumber}&query=${search}`,
+        };
+      },
+    }),
   }),
 });
 
@@ -35,4 +45,5 @@ export const {
   useGetLatestMoviesQuery,
   useGetMovieDetailsQuery,
   useGetTopRatedMoviesQuery,
+  useGetsearchedMoviesQuery,
 } = moviesApi;
