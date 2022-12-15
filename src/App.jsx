@@ -1,6 +1,6 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
 import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
 import Trending from "./components/Trending";
@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="relative flex bg-gradient-to-br from-[#222] to-black">
       <Sidebar />
-      <div className="flex-1 flex flex-col bg-gradient-to-br from-[#222] to-black">
+      <div className="flex-1 flex flex-col bg-gradient-to-br from-[#222] to-black overflow-x-hidden">
         <div />
-        <div className="px-6  h-screen overflow-y-scroll scrollbar-hide flex xl:flex-row flex-col-reverse">
+        <div className="px-6  h-screen  overflow-y-scroll overflow-x-hidden scrollbar-hide flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit  pb-40">
             <Routes>
               <Route path="/" element={<Content />} />
@@ -22,10 +22,6 @@ function App() {
               <Route path="/trending" element={<Trending />} />
               <Route path="/top-rated" element={<TopRated />} />
               <Route path="/search" element={<Search />} />
-              {/* <Route path="/top-charts" element={<div />} /> */}
-              {/* <Route path="/around-you" element={<div />} /> */}
-              {/* <Route path="/artists/:id" element={<div />} /> */}
-              {/* <Route path="/search/:searchTerm" element={<div />} /> */}
             </Routes>
           </div>
         </div>

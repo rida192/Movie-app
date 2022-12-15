@@ -3,9 +3,7 @@ import { useSelector } from "react-redux";
 import { decrement, increment } from "../redux/features/counterSlice";
 import { useGetLatestMoviesQuery } from "../redux/services/apiEndpoints";
 import Loader from "./Loader";
-
 import MoviesGrid from "./MoviesGrid";
-
 const Content = () => {
   // set the pageNumber
   const pageNumber = useSelector((state) => state.counter.value);
