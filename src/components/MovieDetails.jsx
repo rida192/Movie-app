@@ -1,10 +1,14 @@
 import { useEffect, useRef } from "react";
 
 import { useParams } from "react-router-dom";
-import { useGetMovieDetailsQuery } from "../redux/services/apiEndpoints";
+import {
+  useGetMovieDetailsQuery,
+  useGetSimilerMoviesQuery,
+} from "../redux/services/apiEndpoints";
 import Loader from "./Loader";
 import { AiFillStar } from "react-icons/ai";
 import Title from "./Title";
+import MovieCard from "./MovieCard";
 
 const MovieDetails = () => {
   // fetch movie id
@@ -18,6 +22,8 @@ const MovieDetails = () => {
     isLoading,
   } = useGetMovieDetailsQuery(movieId);
 
+  // fetch similer movies
+  const { data: similerMovies } = useGetSimilerMoviesQuery(movieId);
   const divRef = useRef(null);
 
   // scroll up onMount
@@ -25,7 +31,8 @@ const MovieDetails = () => {
     divRef?.current?.scrollIntoView({ behavior: "smooth" });
   });
 
-  console.log("movie", movie);
+  // console.log("movie", movie);
+  console.log(similerMovies);
 
   return error ? (
     <>Somthing Went Wrong!!</>
@@ -34,15 +41,18 @@ const MovieDetails = () => {
       <Loader />
     </>
   ) : movie ? (
-    <div className="flex flex-col  pt-28 md:pt-40 fadeAnimate" ref={divRef}>
-      <div className="flex flex-col md:flex-col gap-8 max-w-[1200px]">
+    <div
+      className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate  "
+      ref={divRef}
+    >
+      <div className="flex flex-col  gap-8 max-w-[1200px] ">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-2">
           <div className="">
             <h2 className=" text-2xl  md:text-4xl max-w-[700px] mb-4 text-center md:text-start ">
               {movie.original_title}
             </h2>
 
-            {/* getting the release data */}
+            {/* getting the release date data */}
             <div className="flex gap-2 text-gray-300 font-light justify-center md:justify-start flex-wrap">
               Movies .<p>{movie.original_language}</p>.{" "}
               <p>{movie?.release_date?.slice(0, 4)}</p> .{" "}
@@ -65,6 +75,7 @@ const MovieDetails = () => {
             <img
               src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
               className="object-fit max-h-full w-full"
+              loading="lazy"
             />
           </div>
           <div className="flex-1">
@@ -76,7 +87,16 @@ const MovieDetails = () => {
             <Title name={"Overview"} text={movie?.overview} />
           </div>
         </div>
+
+        <Title name={"Similer Movies"} />
+
+        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start ">
+          {similerMovies?.results?.map((movie) => (
+            <MovieCard key={movie.id} className="" movie={movie} />
+          ))}
+        </div>
       </div>
+
       {/* <div className="mt-8 flex flex-wrap gap-3">
         {movie?.genres?.map((genre, i) => (
           <span

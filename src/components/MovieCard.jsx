@@ -10,6 +10,7 @@ const MovieCard = ({ movie }) => {
             src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
             alt="cover image"
             className="transition w-full h-full duration-200 object-fit"
+            loading="lazy"
           />
         </div>
         <h2 className="text-sm mt-2 text-ellipsis whitespace-nowrap overflow-hidden">
@@ -21,7 +22,9 @@ const MovieCard = ({ movie }) => {
         >
           <AiFillStar />
           <p className=" text-black text-xs font-bold -mt-[30px]">
-            {movie?.vote_average}
+            {movie?.vote_average === 0
+              ? movie?.vote_average
+              : (movie?.vote_average).toFixed(1)}
           </p>
         </h2>
       </Link>

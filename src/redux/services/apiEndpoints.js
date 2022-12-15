@@ -26,6 +26,7 @@ export const moviesApi = createApi({
           import.meta.env.VITE_API_KEY
         }&language=en-US&page=${pageNumber}`,
     }),
+
     getsearchedMovies: builder.query({
       query: (args) => {
         const { search, pageNumber } = args;
@@ -35,6 +36,12 @@ export const moviesApi = createApi({
           }&language=en-US&page=${pageNumber}&query=${search}`,
         };
       },
+    }),
+    getSimilerMovies: builder.query({
+      query: (movieId) =>
+        `movie/${movieId}/similar?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1`,
     }),
   }),
 });
@@ -46,4 +53,5 @@ export const {
   useGetMovieDetailsQuery,
   useGetTopRatedMoviesQuery,
   useGetsearchedMoviesQuery,
+  useGetSimilerMoviesQuery,
 } = moviesApi;
