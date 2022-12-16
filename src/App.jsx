@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
@@ -14,7 +13,7 @@ function App() {
       <Sidebar />
       <div className="flex-1 flex flex-col bg-gradient-to-br from-[#222] to-black overflow-x-hidden">
         <div />
-        <div className="px-6  h-screen  overflow-y-scroll overflow-x-hidden scrollbar-hide flex xl:flex-row flex-col-reverse">
+        <div className="px-6 h-screen  overflow-y-scroll overflow-x-hidden scrollbar-hide flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit  pb-40">
             <Routes>
               <Route path="/" element={<Content />} />
