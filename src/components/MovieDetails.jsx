@@ -42,7 +42,7 @@ const MovieDetails = () => {
     </>
   ) : movie ? (
     <div
-      className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate  "
+      className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate"
       ref={divRef}
     >
       <div className="flex flex-col  gap-8 max-w-[1200px] ">
@@ -90,7 +90,7 @@ const MovieDetails = () => {
 
         <Title name={"Similer Movies"} />
 
-        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start ">
+        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start">
           {similerMovies?.results?.map((movie) => (
             <MovieCard key={movie.id} className="" movie={movie} />
           ))}

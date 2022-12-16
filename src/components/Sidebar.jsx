@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
 import { BiSearch, BiCategory, BiCompass } from "react-icons/bi";
@@ -36,15 +36,22 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
+      {/* desktop header */}
       <div className="hidden md:flex flex-col w-[150px] py-10 px-4 bg-gradient-to-br from-[#222] to-black rounded-tr-[50px] rounded-br-[50px] gap-20">
         <h1 className="text-3xl mx-auto">
           <span className="text-teal-400 font-[Pacifico]">Movie</span>fy
         </h1>
         <NavLinks />
       </div>
+      {/* mobile header */}
       <div className="absolute container py-4 flex justify-between items-center md:hidden top-0 left-0  z-[20] w-full bg-gradient-to-br from-teal-900/50 backdrop-blur-lg to-[#222]  ">
         <h1 className="text-2xl sm:text-2xl ">
-          <span className="text-teal-400 font-[Pacifico]">Movie</span>fy
+          <Link to="/">
+            <span className="text-teal-400 font-[Pacifico] cursor-pointer">
+              Movie
+            </span>
+            fy
+          </Link>
         </h1>
         {mobileMenuOpen ? (
           // close button
