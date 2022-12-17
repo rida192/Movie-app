@@ -75,7 +75,6 @@ const MovieDetails = () => {
             <img
               src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
               className="object-fit max-h-full w-full"
-              loading="lazy"
             />
           </div>
           <div className="flex-1">
