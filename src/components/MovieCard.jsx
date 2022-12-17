@@ -10,7 +10,6 @@ const MovieCard = ({ movie }) => {
             src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
             alt="cover image"
             className="transition w-full h-full duration-200 object-fit"
-            loading="lazy"
           />
         </div>
         <h2 className="text-sm mt-2 text-ellipsis whitespace-nowrap overflow-hidden">
