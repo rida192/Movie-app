@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
@@ -9,7 +10,7 @@ import TopRated from "./components/TopRated";
 
 function App() {
   return (
-    <div className="relative flex bg-gradient-to-br from-[#222] to-black">
+    <div className="relative flex bg-gradient-to-br from-[#222] to-black dark:from-[white] dark:to-white/90">
       <Sidebar />
       <div className="flex-1 flex flex-col bg-gradient-to-br from-[#222] to-black overflow-x-hidden">
         <div />
