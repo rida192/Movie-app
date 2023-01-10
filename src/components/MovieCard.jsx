@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm  ">
+    <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm hover:scale-[1.03] ">
       <Link to={`/movies/${movie.id}`}>
         <div className="img-container overflow-hidden h-[150px] sm:h-[200px] ">
           <img
