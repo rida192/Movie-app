@@ -48,7 +48,7 @@ const Search = () => {
             {/* input feild */}
             <input
               ref={inputRef}
-              className="text-black focus:outline-none py-2 pr-11 pl-4  rounded-full w-[200px] sm:w-[500px] "
+              className="text-black focus:outline-none py-2 pr-11 pl-4  rounded-full w-[300px] sm:w-[500px] "
               type="text"
               vlaue={search}
             />
