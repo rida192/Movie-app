@@ -4,6 +4,7 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
 import { BiSearch, BiCategory, BiCompass } from "react-icons/bi";
 import { AiOutlineFire } from "react-icons/ai";
+import { BsBookmark } from "react-icons/bs";
 
 // Navlinks function for useablity
 const NavLinks = ({ handleClick }) => {
@@ -13,6 +14,7 @@ const NavLinks = ({ handleClick }) => {
     { name: "Search", to: "/search", icon: <BiSearch /> },
     // { name: "Trending", to: "/trending", icon: <AiOutlineFire /> },
     { name: "Top Rated", to: "/top-rated", icon: <AiOutlineFire /> },
+    { name: "Watchlist", to: "/watchlist", icon: <BsBookmark /> },
   ];
   return (
     <div className="mt-10">

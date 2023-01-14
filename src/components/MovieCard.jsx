@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import { BsBookmark } from "react-icons/bs";
 
 const MovieCard = ({ movie }) => {
+  const setMovie = (movie) => {
+    localStorage.setItem("movies", JSON.stringify(movie));
+  };
+
   return (
     <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] ">
+      <button
+        className="absolute text-[30px] left-[15px] top-[5px] z-[10000]
+        "
+        onClick={() => setMovie(movie)}
+      >
+        <BsBookmark />
+      </button>
       <Link to={`/movies/${movie.id}`}>
         <div className="img-container overflow-hidden h-[150px] sm:h-[200px] ">
           <img
@@ -17,7 +29,7 @@ const MovieCard = ({ movie }) => {
         </h2>
 
         <h2
-          className={`absolute text-[45px] text-yellow-500 right-[5px] top-[5px] fflex items-center justify-center `}
+          className={`absolute text-[45px] text-yellow-500 right-[5px] top-[5px]  `}
         >
           <AiFillStar />
           <p className=" text-black text-xs font-bold -mt-[30px]">
