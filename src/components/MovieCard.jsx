@@ -13,13 +13,13 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] ">
-      <button
+      {/* <button
         className="absolute text-[30px] left-[15px] top-[5px] z-[10000]
         "
         // onClick={() => setMovie(movie)} some code
       >
         <BsBookmark />
-      </button>
+      </button> */}
       <Link to={`/movies/${movie.id}`}>
         <div className="img-container overflow-hidden h-[150px] sm:h-[200px] ">
           <img
