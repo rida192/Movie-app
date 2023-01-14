@@ -32,7 +32,7 @@ const MovieDetails = () => {
   });
 
   // console.log("movie", movie);
-  console.log(similerMovies);
+  // console.log(similerMovies);
 
   return error ? (
     <>Somthing Went Wrong!!</>

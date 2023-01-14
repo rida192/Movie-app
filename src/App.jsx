@@ -7,6 +7,7 @@ import Trending from "./components/Trending";
 import Search from "./components/Search";
 import MovieDetails from "./components/MovieDetails";
 import TopRated from "./components/TopRated";
+import Watchlist from "./components/Watchlist";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/trending" element={<Trending />} />
               <Route path="/top-rated" element={<TopRated />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/watchlist" element={<Watchlist />} />
             </Routes>
           </div>
         </div>
