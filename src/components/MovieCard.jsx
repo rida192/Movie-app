@@ -4,19 +4,19 @@ import { AiFillStar } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 
 const MovieCard = ({ movie }) => {
-  useEffect(() => {
-    localStorage.setItem("movies");
-  }, []);
-  const setMovie = (movie) => {
-    localStorage.setItem("movies", JSON.stringify(movie));
-  };
+  // useEffect(() => {
+  //   localStorage.setItem("movies");
+  // }, []);
+  // const setMovie = (movie) => {
+  //   localStorage.setItem("movies", JSON.stringify(movie));
+  // };
 
   return (
     <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] ">
       <button
         className="absolute text-[30px] left-[15px] top-[5px] z-[10000]
         "
-        onClick={() => setMovie(movie)}
+        // onClick={() => setMovie(movie)}
       >
         <BsBookmark />
       </button>
