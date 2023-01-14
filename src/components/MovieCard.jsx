@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 
 const MovieCard = ({ movie }) => {
+  useEffect(() => {
+    localStorage.setItem("movies");
+  }, []);
   const setMovie = (movie) => {
     localStorage.setItem("movies", JSON.stringify(movie));
   };
