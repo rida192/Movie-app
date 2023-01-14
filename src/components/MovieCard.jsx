@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
       <button
         className="absolute text-[30px] left-[15px] top-[5px] z-[10000]
         "
-        // onClick={() => setMovie(movie)}
+        // onClick={() => setMovie(movie)} some code
       >
         <BsBookmark />
       </button>
