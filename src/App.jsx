@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
@@ -23,7 +22,7 @@ function App() {
               <Route path="/trending" element={<Trending />} />
               <Route path="/top-rated" element={<TopRated />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/watchlist" element={<Watchlist />} />
+              {/* <Route path="/watchlist" element={<Watchlist />} /> */}
             </Routes>
           </div>
         </div>

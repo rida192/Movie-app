@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import MoviesGrid from "./MoviesGrid";
 const Watchlist = () => {
   // const [movies, setMovies] = useState([]);
   const [text, setText] = useState("");
@@ -26,7 +27,7 @@ const Watchlist = () => {
         value: input.current.value,
       },
     ]);
-    // setText("");
+    setText("");
   };
 
   function getLocalStorage() {
@@ -66,7 +67,7 @@ const Watchlist = () => {
 
       {list.map((item, i) => (
         <div key={i}>
-          <h1>{item.title}</h1>
+          <h1>{item?.title}</h1>
           <button
             onClick={() => {
               removeFromLocalStorage(item.id);
@@ -77,6 +78,8 @@ const Watchlist = () => {
           </button>
         </div>
       ))}
+
+      <MoviesGrid moviesList={list} />
     </div>
   );
 };
