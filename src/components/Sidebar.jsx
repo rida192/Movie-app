@@ -14,7 +14,7 @@ const NavLinks = ({ handleClick }) => {
     { name: "Search", to: "/search", icon: <BiSearch /> },
     // { name: "Trending", to: "/trending", icon: <AiOutlineFire /> },
     { name: "Top Rated", to: "/top-rated", icon: <AiOutlineFire /> },
-    { name: "Watchlist", to: "/watchlist", icon: <BsBookmark /> },
+    // { name: "Watchlist", to: "/watchlist", icon: <BsBookmark /> },
   ];
   return (
     <div className="mt-10">
