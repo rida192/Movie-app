@@ -1,4 +1,4 @@
-# Moviefy - Movies Wep App
+# Moviefy - Movies Web App
 
 ![Design preview for the Website](./src/assets/5.png)
 
