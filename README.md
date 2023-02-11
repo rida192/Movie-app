@@ -1,4 +1,4 @@
-# Frontend Mentor - News homepage
+# Moviefy - Movies Wep App
 
 ![Design preview for the Website](./src/assets/5.png)
 
@@ -6,7 +6,7 @@
 
 Thanks for checking out this.
 
-**To do this challenge, you need a good understanding of HTML and CSS, and basic JavaScript.**
+** created by react js take a look hero [Preview](https://moviefy-application.vercel.app/).**
 
 ## The challenge
 
