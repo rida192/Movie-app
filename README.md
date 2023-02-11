@@ -6,7 +6,7 @@
 
 Thanks for checking out this.
 
-** created by react js take a look hero [Preview](https://moviefy-application.vercel.app/).**
+** created by react js take a look hero [Preview](https://moviefy-application.vercel.app/). **
 
 ## The challenge
 
