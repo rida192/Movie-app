@@ -10,7 +10,7 @@ import Watchlist from "./components/Watchlist";
 
 function App() {
   return (
-    <div className="relative flex bg-gradient-to-br from-[#222] to-black dark:from-[white] dark:to-white/90">
+    <div className="relative flex bg-gradient-to-br from-[#222] to-black ">
       <Sidebar />
       <div className="flex-1 flex flex-col bg-gradient-to-br from-[#222] to-black overflow-x-hidden">
         <div />
