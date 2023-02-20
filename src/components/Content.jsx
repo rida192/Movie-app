@@ -8,8 +8,6 @@ const Content = ({ list, setList }) => {
   // set the pageNumber
   const pageNumber = useSelector((state) => state.counter.value);
 
-  console.log(pageNumber);
-
   // fetch latest movies data
   const {
     data: moviesList,
@@ -17,7 +15,6 @@ const Content = ({ list, setList }) => {
     isLoading,
     isFetching,
   } = useGetLatestMoviesQuery(pageNumber);
-  console.log(moviesList);
 
   const divRef = useRef(null);
 
