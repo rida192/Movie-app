@@ -73,7 +73,11 @@ const MovieDetails = () => {
         <div className="flex flex-col md:flex-row gap-14 lg:gap-32 ">
           <div className=" w-[290px] h-[270px] md:h-[390px]  self-center md:self-start">
             <img
-              src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
+              src={
+                movie?.poster_path
+                  ? `https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`
+                  : "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png"
+              }
               className="object-fit max-h-full w-full"
             />
           </div>

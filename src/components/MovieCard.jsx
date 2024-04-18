@@ -7,7 +7,11 @@ const MovieCard = ({ movie }) => {
       <Link to={`/movies/${movie.id}`}>
         <div className="img-container overflow-hidden h-[150px] sm:h-[200px] ">
           <img
-            src={`https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`}
+            src={
+              movie?.poster_path
+                ? `https://themoviedb.org/t/p/w220_and_h330_face${movie?.poster_path}`
+                : "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png"
+            }
             alt="cover image"
             className="transition w-full h-full duration-200 object-fit"
           />
