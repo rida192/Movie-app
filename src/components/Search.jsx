@@ -35,7 +35,7 @@ const Search = () => {
     setSearch(value);
     inputRef.current.value = "";
   };
-  console.log(moviesList, pageNumber, search);
+  // console.log(moviesList, pageNumber, search);
   return isLoading || isFetching ? (
     <>
       <Loader />

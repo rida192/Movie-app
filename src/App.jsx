@@ -18,7 +18,7 @@ function App() {
           <div className="flex-1 h-fit  pb-40">
             <Routes>
               <Route path="/" element={<Content />} />
-              <Route path="/movies/:movieId" element={<MovieDetails />} />
+              <Route path="/:genre/:movieId" element={<MovieDetails />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/top-rated" element={<TopRated />} />
               <Route path="/search" element={<Search />} />

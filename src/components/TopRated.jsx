@@ -8,14 +8,14 @@ import MoviesGrid from "./MoviesGrid";
 
 const TopRated = () => {
   const pageNumber = useSelector((state) => state.topRated.value);
-  console.log(pageNumber);
+  // console.log(pageNumber);
   const {
     data: moviesList,
     error,
     isLoading,
     isFetching,
   } = useGetTopRatedMoviesQuery(pageNumber);
-  console.log(moviesList);
+  // console.log(moviesList);
 
   const divRef = useRef(null);
 

@@ -49,7 +49,7 @@ const Watchlist = () => {
     setList(getLocalStorage());
   };
 
-  console.log(list);
+  // console.log(list);
   return (
     <div>
       <h1>Watchlist</h1>
