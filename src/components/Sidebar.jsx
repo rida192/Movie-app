@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
 import { BiSearch, BiCategory, BiCompass } from "react-icons/bi";
@@ -8,6 +8,11 @@ import { BsBookmark } from "react-icons/bs";
 
 // Navlinks function for useablity
 const NavLinks = ({ handleClick }) => {
+  const { pathname } = useLocation();
+
+  const genre = pathname.split("/")[1];
+  console.log(pathname.split("/")[1]);
+
   // Linkes array to loop through it
   const links = [
     { name: "Discover", to: "/", icon: <BiCompass /> },
@@ -16,15 +21,19 @@ const NavLinks = ({ handleClick }) => {
     { name: "Top Rated", to: "/top-rated", icon: <AiOutlineFire /> },
     // { name: "Watchlist", to: "/watchlist", icon: <BsBookmark /> },
   ];
+
   return (
     <div className="mt-10">
       {links.map((item) => (
         <NavLink
-          className="flex flex-row items-center  my-8 text-sm font-medium text-white hover:text-teal-400 active:text-teal-400 transition duration-200"
+          className={`flex flex-row items-center  my-8 text-sm font-medium text-white hover:text-teal-400 active:text-teal-400 transition duration-200 ${
+            item.name === "Discover" && genre === "movies" ? "active" : ""
+          }
+          `}
           to={item.to}
           key={item.name}
           onClick={handleClick && handleClick}
-          end
+          // end
         >
           <h2 className="text-2xl mr-2"> {item.icon}</h2>
           {item.name}
