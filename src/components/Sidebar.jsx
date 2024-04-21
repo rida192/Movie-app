@@ -11,7 +11,7 @@ const NavLinks = ({ handleClick }) => {
   const { pathname } = useLocation();
 
   const genre = pathname.split("/")[1];
-  console.log(pathname.split("/")[1]);
+  // console.log(pathname.split("/")[1]);
 
   // Linkes array to loop through it
   const links = [
@@ -20,6 +20,7 @@ const NavLinks = ({ handleClick }) => {
     // { name: "Trending", to: "/trending", icon: <AiOutlineFire /> },
     { name: "Top Rated", to: "/top-rated", icon: <AiOutlineFire /> },
     // { name: "Watchlist", to: "/watchlist", icon: <BsBookmark /> },
+    { name: "Bookmarks", to: "/bookmarked", icon: <BsBookmark /> },
   ];
 
   return (
