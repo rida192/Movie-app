@@ -7,6 +7,8 @@ import Search from "./components/Search";
 import MovieDetails from "./components/MovieDetails";
 import TopRated from "./components/TopRated";
 import Watchlist from "./components/Watchlist";
+import { BookmarkProvider } from "./context/bookmarkContext";
+import BookmarkedMovies from "./components/BookmarkedMovies";
 
 function App() {
   return (
@@ -16,14 +18,17 @@ function App() {
         <div />
         <div className="px-6 h-screen  overflow-y-scroll overflow-x-hidden scrollbar-hide flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit  pb-40">
-            <Routes>
-              <Route path="/" element={<Content />} />
-              <Route path="/:genre/:movieId" element={<MovieDetails />} />
-              <Route path="/trending" element={<Trending />} />
-              <Route path="/top-rated" element={<TopRated />} />
-              <Route path="/search" element={<Search />} />
-              {/* <Route path="/watchlist" element={<Watchlist />} /> */}
-            </Routes>
+            <BookmarkProvider>
+              <Routes>
+                <Route path="/" element={<Content />} />
+                <Route path="/:genre/:movieId" element={<MovieDetails />} />
+                <Route path="/trending" element={<Trending />} />
+                <Route path="/top-rated" element={<TopRated />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/bookmarked" element={<BookmarkedMovies />} />
+                {/* <Route path="/watchlist" element={<Watchlist />} /> */}
+              </Routes>
+            </BookmarkProvider>
           </div>
         </div>
       </div>

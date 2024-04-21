@@ -1,11 +1,16 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import { FaBookmark } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";
+import { useBookmarkContext } from "../context/bookmarkContext";
 
 const MovieCard = ({ movie }) => {
   // const params = useParams();
   const { pathname } = useLocation();
 
   const genre = pathname.split("/")[1];
+
+  const { addBookmark, removeBookmark, isBookmarked } = useBookmarkContext();
 
   return (
     <div className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] ">
@@ -36,6 +41,23 @@ const MovieCard = ({ movie }) => {
           </p>
         </h2>
       </Link>
+      <div>
+        {isBookmarked(movie.id) ? (
+          <button
+            className="absolute text-[25px] text-yellow-500 left-[15px] top-[15px]"
+            onClick={() => removeBookmark(movie.id)}
+          >
+            <FaBookmark />
+          </button>
+        ) : (
+          <button
+            className="absolute text-[25px] text-yellow-500 left-[15px] top-[15px]"
+            onClick={() => addBookmark(movie)}
+          >
+            <FaRegBookmark />
+          </button>
+        )}
+      </div>
     </div>
   );
 };
