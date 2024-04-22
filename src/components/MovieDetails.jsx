@@ -9,6 +9,7 @@ import Loader from "./Loader";
 import { AiFillStar } from "react-icons/ai";
 import Title from "./Title";
 import MovieCard from "./MovieCard";
+import { AnimatePresence, motion } from "framer-motion";
 
 const MovieDetails = () => {
   // fetch movie id
@@ -41,16 +42,24 @@ const MovieDetails = () => {
       <Loader />
     </>
   ) : movie ? (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
       className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate"
       ref={divRef}
     >
       <div className="flex flex-col  gap-8 max-w-[1200px] ">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-2">
           <div className="">
-            <h2 className=" text-2xl  md:text-4xl max-w-[700px] mb-4 text-center md:text-start ">
+            <motion.h2
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className=" text-2xl  md:text-4xl max-w-[700px] mb-4 text-center md:text-start"
+            >
               {movie.original_title}
-            </h2>
+            </motion.h2>
 
             {/* getting the release date data */}
             <div className="flex gap-2 text-gray-300 font-light justify-center md:justify-start flex-wrap">
@@ -151,7 +160,7 @@ const MovieDetails = () => {
           ))}
         </div>
       </div> */}
-    </div>
+    </motion.div>
   ) : null;
 };
 

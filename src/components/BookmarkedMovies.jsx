@@ -9,7 +9,7 @@ const BookmarkedMovies = () => {
 
   return (
     <div>
-      <MoviesGrid moviesList={bookmarks} bookmark />
+      <MoviesGrid moviesList={bookmarks} />
     </div>
   );
 };
