@@ -1,6 +1,6 @@
 body {
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-display: swap;
 }
 
@@ -9,11 +9,11 @@ body {
 }
 
 a.active {
-  @apply text-teal-400
+  @apply text-teal-400;
 }
 
 .fadeAnimate {
-  animation: .5s fadeAnimate ease-in-out;
+  animation: 0.5s fadeAnimate ease-in-out;
 }
 
 .scroller::-webkit-scrollbar {
@@ -21,7 +21,6 @@ a.active {
   height: 10px;
   border: 2px solid #222;
 }
-
 
 .scroller::-webkit-scrollbar-track {
   background-color: white;
@@ -35,25 +34,27 @@ a.active {
   background-color: #333;
 }
 
-
-
 .custom-loader {
   width: 50px;
   height: 12px;
-  background:
-    radial-gradient(circle closest-side, #FFFFFF 90%, #0000) 0% 50%,
-    radial-gradient(circle closest-side, #FFFFFF 90%, #0000) 50% 50%,
-    radial-gradient(circle closest-side, #FFFFFF 90%, #0000) 100% 50%;
-  background-size: calc(100%/3) 100%;
+  background: radial-gradient(circle closest-side, #ffffff 90%, #0000) 0% 50%,
+    radial-gradient(circle closest-side, #ffffff 90%, #0000) 50% 50%,
+    radial-gradient(circle closest-side, #ffffff 90%, #0000) 100% 50%;
+  background-size: calc(100% / 3) 100%;
   background-repeat: no-repeat;
   animation: d7 1s infinite linear;
 }
 
 .blur-content {
-  background-image: linear-gradient(to right, rgba(31.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 10.5, 0.84) 30%, rgba(31.5, 10.5, 10.5, 0.84) 100%);
+  background-image: linear-gradient(
+    to right,
+    rgba(31.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px),
+    rgba(31.5, 10.5, 10.5, 0.84) 30%,
+    rgba(31.5, 10.5, 10.5, 0.84) 100%
+  );
 }
 
-@keyframes d7 {
+/* @keyframes d7 {
   33% {
     background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
   }
@@ -75,4 +76,4 @@ a.active {
   to {
     opacity: 1;
   }
-}
+} */
