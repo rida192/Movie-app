@@ -23,7 +23,7 @@ const MovieCard = ({ movie, index }) => {
       animate={{ opacity: 1 }}
       // exit={{ opacity: 0, transition: { duration: 0.5 } }}
       transition={{ duration: 0.2, delay: index * 0.05 }}
-      className="bg-gradient-to-tl from-white/20  to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] "
+      className="bg-gradient-to-tl dark:from-white/20  dark:to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] text-black dark:text-white shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 dark:shadow-none "
     >
       <div className="flex justify-between items-center ">
         <div>
@@ -46,7 +46,7 @@ const MovieCard = ({ movie, index }) => {
               animate={{ opacity: 1, scale: 1 }}
               // exit={{ opacity: 0, transition: { duration: 0.5 } }}
               transition={{ duration: 0.1 }}
-              className=" text-[20px] text-white "
+              className=" text-[20px] dark:text-white text-black  "
               onClick={() => addBookmark(movie)}
             >
               <FaRegBookmark />
