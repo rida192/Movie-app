@@ -52,6 +52,17 @@ a.active {
   animation: d7 1s infinite linear;
 }
 
+.light-mode-loader {
+  width: 50px;
+  height: 12px;
+  background: radial-gradient(circle closest-side, #000000 90%, #ffffff) 0% 50%,
+    radial-gradient(circle closest-side, #000000 90%, #ffffff) 50% 50%,
+    radial-gradient(circle closest-side, #000000 90%, #ffffff) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  background-repeat: no-repeat;
+  animation: d7 1s infinite linear;
+}
+
 .blur-content {
   background-image: linear-gradient(
     to right,
@@ -61,20 +72,20 @@ a.active {
   );
 }
 
-/* @keyframes d7 {
+@keyframes d7 {
   33% {
-    background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
   }
 
   50% {
-    background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
   }
 
   66% {
-    background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
   }
 }
-
+/*
 @keyframes fadeAnimate {
   from {
     opacity: 0;
