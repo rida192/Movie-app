@@ -132,7 +132,7 @@ const Sidebar = () => {
       </div>
       <div
         // toggled nav
-        className={`absolute top-0 h-screen w-[calc(46%+28px)] bg-gradient-to-tl from-white/10 to-white dark:to-[#222]  backdrop-blur-lg z-[21]  py-6 px-3 md:hidden transition-all duration-300 overflow-hidden ${
+        className={`absolute top-0 h-[100dvh] w-[calc(46%+28px)] bg-gradient-to-tl from-white/10 to-white dark:to-[#222]  backdrop-blur-lg z-[21]  py-6 px-3 md:hidden transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "left-0" : "-left-full"
         } `}
       >
