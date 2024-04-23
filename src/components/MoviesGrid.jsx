@@ -37,7 +37,7 @@ const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
       </div>
 
       {moviesList?.results?.length && (
-        <div className="flex items-center justify-center mt-10  space-x-4">
+        <div className="flex items-center justify-center mt-10  space-x-4 text-black dark:text-white">
           {/* Prev button */}
           <button
             onClick={() => {
@@ -49,7 +49,7 @@ const MoviesGrid = ({ moviesList, pageNumber, increment, decrement }) => {
             }}
             className={`flex items-center justify-center gap-[4px]  transition duration-200 ${
               pageNumber === 1
-                ? "opacity-50 hover:text-white"
+                ? "opacity-50 hover:text-black dark:opacity-50 dark:hover:text-white "
                 : "hover:text-teal-400"
             }`}
           >
