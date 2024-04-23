@@ -44,7 +44,10 @@ const Search = () => {
     <>
       <div className="pt-28 md:pt-40" ref={divRef}>
         <div className="flex justify-center  mx-auto">
-          <form onSubmit={onSubmit} className="flex">
+          <form
+            onSubmit={onSubmit}
+            className="flex shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] rounded-r-full rounded-l-full dark:shadow-none"
+          >
             {/* input feild */}
             <input
               ref={inputRef}
