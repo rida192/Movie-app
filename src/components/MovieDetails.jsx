@@ -49,7 +49,7 @@ const MovieDetails = () => {
       className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate"
       ref={divRef}
     >
-      <div className="flex flex-col  gap-8 max-w-[1200px] px-6">
+      <div className="flex flex-col  gap-8 max-w-[1200px] px-6 text-black dark:text-white">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-2">
           <div className="">
             <motion.h2
@@ -62,7 +62,7 @@ const MovieDetails = () => {
             </motion.h2>
 
             {/* getting the release date data */}
-            <div className="flex gap-2 text-gray-300 font-light justify-center md:justify-start flex-wrap">
+            <div className="flex gap-2 text-black dark:text-gray-300 font-light justify-center md:justify-start flex-wrap">
               Movies .<p>{movie.original_language}</p>.{" "}
               <p>{movie?.release_date?.slice(0, 4)}</p> .{" "}
               {movie?.genres.slice(0, 2).map((genre) => (
@@ -80,7 +80,7 @@ const MovieDetails = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-14 lg:gap-32 ">
-          <div className=" w-[290px] h-[270px] md:h-[390px]  self-center md:self-start">
+          <div className=" w-[290px] h-[270px] md:h-[390px]  self-center md:self-start shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 dark:shadow-none">
             <img
               src={
                 movie?.poster_path
@@ -92,7 +92,7 @@ const MovieDetails = () => {
           </div>
           <div className="flex-1">
             <div className="mb-4">
-              <i className="text-xl text-white/80 font-mono">
+              <i className="text-xl text-black/80 dark:text-white/80 font-mono">
                 {movie?.tagline}
               </i>
             </div>
@@ -102,7 +102,7 @@ const MovieDetails = () => {
 
         <Title name={"Similer Movies"} />
 
-        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start">
+        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70">
           {similerMovies?.results?.map((movie) => (
             <MovieCard key={movie.id} className="" movie={movie} />
           ))}

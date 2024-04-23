@@ -5,11 +5,14 @@ import "./index.css";
 
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "./context/themeContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </Provider>
   </BrowserRouter>
 );
