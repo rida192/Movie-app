@@ -107,7 +107,7 @@ const Sidebar = () => {
         </div>
       </div>
       {/* mobile header */}
-      <div className="absolute container py-4 flex justify-between items-center md:hidden top-0 left-0  z-[20] w-full bg-gradient-to-br dark:from-teal-900/50 dark:backdrop-blur-lg backdrop-blur-[1000px] dark:to-[#222] to-white text-black shadow-xl shadow-black/40 dark:shadow-none dark:text-white ">
+      <div className="absolute container py-4 flex justify-between items-center md:hidden top-0 left-0  z-[20] w-full bg-gradient-to-br dark:from-teal-900/50 dark:backdrop-blur-lg dark:to-[#222]  text-black shadow-xl shadow-black/40 dark:shadow-none dark:text-white bg-white dark:bg-white/0 ">
         <h1 className="text-2xl sm:text-2xl ">
           <Link to="/">
             <span className="text-teal-400 font-[Pacifico] cursor-pointer">
