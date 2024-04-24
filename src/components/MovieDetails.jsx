@@ -11,6 +11,7 @@ import { AiFillStar } from "react-icons/ai";
 import Title from "./Title";
 import MovieCard from "./MovieCard";
 import { motion } from "framer-motion";
+import ActorDetails from "./ActorDetails";
 
 const MovieDetails = () => {
   // fetch movie id
@@ -108,28 +109,9 @@ const MovieDetails = () => {
         <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start mb-7 md:mb-10    ">
           {/* shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 */}
           {movieCreadits?.cast?.map(
-            (person) =>
+            (actor) =>
               // <MovieCard key={movie.id} className="" movie={movie} />
-              person?.profile_path && (
-                <div class="card my-2.5 shadow-[0_5px_10px_0_rgba(0,0,0,0.3)] shadow-black/70 rounded-sm overflow-hidden">
-                  <div class="h-[150px] sm:h-[200px] ">
-                    <img
-                      loading="lazy"
-                      className="transition w-full h-full duration-200 object-fill"
-                      src={`https://media.themoviedb.org/t/p/w138_and_h175_face${person?.profile_path}`}
-                      srcSet={`https://media.themoviedb.org/t/p/w138_and_h175_face${person?.profile_path} 1x, https://media.themoviedb.org/t/p/w276_and_h350_face${person?.profile_path} 2x`}
-                      alt="Anna Sawai as Toda Mariko"
-                    />
-                  </div>
-
-                  <div className="p-2">
-                    <p class="character font-semibold">
-                      {person?.original_name}
-                    </p>
-                    <p class="episode_count">{person?.character}</p>
-                  </div>
-                </div>
-              )
+              actor?.profile_path && <ActorDetails actor={actor} />
           )}
         </div>
         <Title name={"Similer Movies"} />
