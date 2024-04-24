@@ -43,6 +43,15 @@ export const moviesApi = createApi({
           import.meta.env.VITE_API_KEY
         }&language=en-US&page=1`,
     }),
+    getMovieCreadits: builder.query({
+      query: (movieId) =>
+        `movie/${movieId}/credits?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US`,
+      // `movie/${movieId}/similar?api_key=${
+      //   import.meta.env.VITE_API_KEY
+      // }&language=en-US&page=1`,
+    }),
   }),
 });
 
@@ -54,4 +63,5 @@ export const {
   useGetTopRatedMoviesQuery,
   useGetsearchedMoviesQuery,
   useGetSimilerMoviesQuery,
+  useGetMovieCreaditsQuery,
 } = moviesApi;

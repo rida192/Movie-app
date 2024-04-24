@@ -18,7 +18,7 @@ const MovieCard = ({ movie, index }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2, delay: index * 0.05 }}
-        className="bg-gradient-to-tl dark:from-white/20  dark:to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] text-black dark:text-white shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 dark:shadow-none "
+        className="bg-gradient-to-tl dark:from-white/20  dark:to-[#222] hover:from-white/30 hover:saturate-[2.5]  backdrop-blur-lg text-center p-2 relative transition-all duration-100 group rounded-sm md:hover:scale-[1.03] text-black dark:text-white shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 dark:shadow-none my-2.5 "
       >
         <div className="flex justify-between items-center ">
           <div>
