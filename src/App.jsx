@@ -13,8 +13,6 @@ import { useEffect, useState } from "react";
 import { useThemeContext } from "./context/themeContext";
 
 function App() {
-  const { darkMode, toggleDarkMode } = useThemeContext();
-
   return (
     <div className="relative flex bg-white/50 dark:bg-gradient-to-br  dark:from-[#222] dark:to-black gap-x-5   ">
       {/* bg-gradient-to-br from-[#222] to-black */}
