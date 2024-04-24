@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 import { useParams } from "react-router-dom";
 import {
+  useGetMovieCreaditsQuery,
   useGetMovieDetailsQuery,
   useGetSimilerMoviesQuery,
 } from "../redux/services/apiEndpoints";
@@ -9,7 +10,8 @@ import Loader from "./Loader";
 import { AiFillStar } from "react-icons/ai";
 import Title from "./Title";
 import MovieCard from "./MovieCard";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import ActorDetails from "./ActorDetails";
 
 const MovieDetails = () => {
   // fetch movie id
@@ -25,6 +27,7 @@ const MovieDetails = () => {
 
   // fetch similer movies
   const { data: similerMovies } = useGetSimilerMoviesQuery(movieId);
+  const { data: movieCreadits } = useGetMovieCreaditsQuery(movieId);
   const divRef = useRef(null);
 
   // scroll up onMount
@@ -32,7 +35,8 @@ const MovieDetails = () => {
     divRef?.current?.scrollIntoView({ behavior: "smooth" });
   });
 
-  // console.log("movie", movie);
+  console.log("movie", movie);
+  console.log("creadits", movieCreadits);
   // console.log(similerMovies);
 
   return error ? (
@@ -79,7 +83,7 @@ const MovieDetails = () => {
             <p>{(movie?.vote_average).toFixed(1)} / 10</p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-14 lg:gap-32 ">
+        <div className="flex flex-col md:flex-row gap-14 lg:gap-32 mb-7 md:mb-10 ">
           <div className=" w-[290px] h-[270px] md:h-[390px]  self-center md:self-start shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 dark:shadow-none">
             <img
               src={
@@ -100,9 +104,19 @@ const MovieDetails = () => {
           </div>
         </div>
 
+        <Title name={"Movie Cast"} />
+
+        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start mb-7 md:mb-10    ">
+          {/* shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70 */}
+          {movieCreadits?.cast?.map(
+            (actor) =>
+              // <MovieCard key={movie.id} className="" movie={movie} />
+              actor?.profile_path && <ActorDetails actor={actor} />
+          )}
+        </div>
         <Title name={"Similer Movies"} />
 
-        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start shadow-[0_5px_20px_0_rgba(0,0,0,0.3)] shadow-black/70">
+        <div className="scroller pb-2 px-1 scroll-px-2 grid grid-flow-col auto-cols-[40%] sm:auto-cols-[30%] md:auto-cols-[21%] gap-4 overflow-x-auto snap-x  [&>*]:snap-start ">
           {similerMovies?.results?.map((movie) => (
             <MovieCard key={movie.id} className="" movie={movie} />
           ))}
