@@ -63,7 +63,7 @@ const Sidebar = () => {
   return (
     <>
       {/* desktop header */}
-      <div className="hidden md:flex flex-col justify-between w-[150px] py-10 px-4 bg-white dark:bg-gradient-to-br  dark:from-[#222] dark:to-black rounded-tr-[50px] rounded-br-[50px] gap-20 text-black dark:text-white shadow-2xl  shadow-black/60 dark:shadow-none">
+      <div className="hidden md:flex flex-col justify-between w-[150px] py-10 px-4 bg-white dark:bg-gradient-to-br  dark:from-[#222] dark:to-black rounded-tr-[50px] rounded-br-[50px] gap-20 text-black dark:text-white shadow-[0_5px_20px_0_rgba(0,0,0,0.3)]  shadow-black/40 dark:shadow-none">
         <h1 className="text-3xl mx-auto">
           <span className="text-teal-400 font-[Pacifico]">Movie</span>fy
         </h1>

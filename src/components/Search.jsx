@@ -61,7 +61,7 @@ const Search = () => {
             </button>
           </form>
         </div>
-        <h1 className=" mt-8 text-white/80 text-sm md:text-lg">
+        <h1 className=" mt-8 text-black dark:text-white/80 text-sm md:text-lg ">
           Showing resluts of {search}
         </h1>
       </div>
