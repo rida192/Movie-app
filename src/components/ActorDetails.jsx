@@ -7,7 +7,7 @@ const ActorDetails = ({ actor }) => {
           className="transition w-full h-full duration-200 object-fill"
           src={`https://media.themoviedb.org/t/p/w138_and_h175_face${actor?.profile_path}`}
           srcSet={`https://media.themoviedb.org/t/p/w138_and_h175_face${actor?.profile_path} 1x, https://media.themoviedb.org/t/p/w276_and_h350_face${actor?.profile_path} 2x`}
-          alt="Anna Sawai as Toda Mariko"
+          alt={actor.original_name}
         />
       </div>
 

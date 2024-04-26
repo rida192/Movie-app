@@ -12,7 +12,7 @@ const WordByWordAnimation = ({ text }) => {
   }, [text]);
 
   return (
-    <div>
+    <p>
       <AnimatePresence initial={false}>
         {words.map((word, index) => (
           <motion.span
@@ -26,7 +26,7 @@ const WordByWordAnimation = ({ text }) => {
           </motion.span>
         ))}
       </AnimatePresence>
-    </div>
+    </p>
   );
 };
 

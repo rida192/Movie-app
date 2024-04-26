@@ -53,7 +53,7 @@ const MovieDetails = () => {
       className="flex flex-col  pt-28 pb-28 md:pt-40 fadeAnimate"
       ref={divRef}
     >
-      <div className="flex flex-col  gap-8 max-w-[1200px] px-6 text-black dark:text-white">
+      <div className="flex flex-col  gap-8 max-w-[1200px] md:px-6 text-black dark:text-white">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-2">
           <div className="">
             <motion.h2
@@ -95,7 +95,7 @@ const MovieDetails = () => {
             />
           </div>
           <div className="flex-1">
-            <div className="mb-4">
+            <div className="mb-8">
               <i className="text-xl text-black/80 dark:text-white/80 font-mono">
                 {movie?.tagline}
               </i>
@@ -111,7 +111,9 @@ const MovieDetails = () => {
           {movieCreadits?.cast?.map(
             (actor) =>
               // <MovieCard key={movie.id} className="" movie={movie} />
-              actor?.profile_path && <ActorDetails actor={actor} />
+              actor?.profile_path && (
+                <ActorDetails key={actor.id} actor={actor} />
+              )
           )}
         </div>
         <Title name={"Similer Movies"} />
