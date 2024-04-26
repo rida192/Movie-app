@@ -95,7 +95,7 @@ const MovieDetails = () => {
             />
           </div>
           <div className="flex-1">
-            <div className="mb-4">
+            <div className="mb-8">
               <i className="text-xl text-black/80 dark:text-white/80 font-mono">
                 {movie?.tagline}
               </i>
@@ -111,7 +111,9 @@ const MovieDetails = () => {
           {movieCreadits?.cast?.map(
             (actor) =>
               // <MovieCard key={movie.id} className="" movie={movie} />
-              actor?.profile_path && <ActorDetails actor={actor} />
+              actor?.profile_path && (
+                <ActorDetails key={actor.id} actor={actor} />
+              )
           )}
         </div>
         <Title name={"Similer Movies"} />

@@ -95,12 +95,12 @@ const Sidebar = () => {
             className="theme-toggle--button mx-auto "
             aria-label="Toggle Theme"
           >
-            <span class={`shape ${darkMode ? "moon" : "sun"}`}></span>
-            <span class="rays--container">
-              <span class="ray"></span>
-              <span class="ray"></span>
-              <span class="ray"></span>
-              <span class="ray"></span>
+            <span className={`shape ${darkMode ? "moon" : "sun"}`}></span>
+            <span className="rays--container">
+              <span className="ray"></span>
+              <span className="ray"></span>
+              <span className="ray"></span>
+              <span className="ray"></span>
             </span>
           </button>
           <p className="flex-1">Theme</p>
@@ -146,12 +146,12 @@ const Sidebar = () => {
               className="theme-toggle--button mx-auto"
               aria-label="Toggle Theme"
             >
-              <span class={`shape ${darkMode ? "moon" : "sun"}`}></span>
-              <span class="rays--container">
-                <span class="ray"></span>
-                <span class="ray"></span>
-                <span class="ray"></span>
-                <span class="ray"></span>
+              <span className={`shape ${darkMode ? "moon" : "sun"}`}></span>
+              <span className="rays--container">
+                <span className="ray"></span>
+                <span className="ray"></span>
+                <span className="ray"></span>
+                <span className="ray"></span>
               </span>
             </button>
             <p className="flex-1">Theme</p>
